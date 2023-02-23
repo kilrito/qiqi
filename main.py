@@ -222,6 +222,8 @@ if __name__ == "__main__":
     # 传入地区获取天气信息
     region = config["region"]
     weather, temp, wind_dir = get_weather(region)
+    note_ch1 = config["note_ch1"]
+    note_en1 = config["note_en1"]
     note_ch = config["note_ch"]
     note_en = config["note_en"]
     if note_ch == "" and note_en == "":
