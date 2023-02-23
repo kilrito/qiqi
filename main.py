@@ -184,14 +184,6 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
             "note_ch": {
                 "value": note_ch,
                 "color": get_color()
-            },
-            "note_en1": {
-                "value": note_en1,
-                "color": get_color()
-            },
-            "note_ch1": {
-                "value": note_ch1,
-                "color": get_color()
             }
         }
     }
@@ -242,8 +234,6 @@ if __name__ == "__main__":
     # 传入地区获取天气信息
     region = config["region"]
     weather, temp, wind_dir = get_weather(region)
-    note_ch1 = config["note_ch1"]
-    note_en1 = config["note_en1"]
     note_ch = config["note_ch"]
     note_en = config["note_en"]
     print(note_ch1)
