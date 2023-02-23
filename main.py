@@ -201,7 +201,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
         if birth_day == 0:
             birthday_data = "今天{}生日哦，祝{}生日快乐！".format(value["name"], value["name"])
         else:
-            birthday_data = "宝贝，离我们{}还有{}天哦，爱你".format(value["name"], birth_day)
+            birthday_data = "宝贝，离我们{}还有{}天哦，爱你❤".format(value["name"], birth_day)
         # 将生日数据插入data
         data["data"][key] = {"value": birthday_data, "color": get_color()}
     headers = {
@@ -246,6 +246,8 @@ if __name__ == "__main__":
     note_en1 = config["note_en1"]
     note_ch = config["note_ch"]
     note_en = config["note_en"]
+    print(note_ch1)
+    print(note_en1)
     if note_ch == "" and note_en == "":
         # 获取词霸每日金句
         note_ch = get_ciba_ch()
