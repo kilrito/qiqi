@@ -179,7 +179,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
         # 获取距离下次生日的时间
         birth_day = get_birthday(value["birthday"], year, today)
         if birth_day == 0:
-            birthday_data = "今天{}哦，开心快乐100%！".format(value["name"])
+            birthday_data = "老婆，今天是我们{}哦，开心快乐100%！".format(value["name"])
         else:
             birthday_data = "宝贝，离我们{}还有{}天哦，爱你❤".format(value["name"], birth_day)
         # 将生日数据插入data
