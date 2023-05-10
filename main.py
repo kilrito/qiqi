@@ -11,6 +11,7 @@ def get_color():
     # 获取随机颜色
     get_colors = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF), range(n)))
     color_list = get_colors(100)
+    print(color_list)
     return random.choice(color_list)
  
  
@@ -183,6 +184,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
             birthday_data = "老婆，今天是我们{}哦，开心快乐100%！".format(value["name"])
         else:
             birthday_data = "老婆，离我们{}还有{}天哦，爱你❤".format(value["name"], birth_day)
+            print(birthday_data)
         # 将生日数据插入data
         data["data"][key] = {"value": birthday_data, "color": get_color()}
     headers = {
@@ -191,6 +193,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
     }
     response = post(url, headers=headers, json=data).json()
+    print(response)
     if response["errcode"] == 40037:
         print("推送消息失败，请检查模板id是否正确")
     elif response["errcode"] == 40036:
