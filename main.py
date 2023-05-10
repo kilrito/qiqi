@@ -207,6 +207,7 @@ if __name__ == "__main__":
     try:
         with open("config.txt", encoding="utf-8") as f:
             config = eval(f.read())
+            print(config)
     except FileNotFoundError:
         print("推送消息失败，请检查config.txt文件是否与程序位于同一路径")
         os.system("pause")
@@ -220,10 +221,12 @@ if __name__ == "__main__":
     accessToken = get_access_token()
     # 接收的用户
     users = config["user"]
+    print(users)
     # 传入地区获取天气信息
     region = config["region"]
     weather, temp, wind_dir = get_weather(region)
     note_ch = config["note_ch"]
+    print(note_ch)
     note_en = config["note_en"]
     if note_ch == "" and note_en == "":
         # 获取词霸每日金句
